@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title%}Register{% endblock %}
+
+{% block body%}
+<div class="mb-3 w-25 my-5" style="margin: auto;">
+    <h4 class="text-center">Register</h4>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <label for="exampleFormControlInput1" class="form-label">Full name</label>
+        <input type="text" class="form-control" name="uname" placeholder="Full Name" required>
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="pwd" placeholder="Password" required>
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email" required>
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <label for="exampleFormControlTextarea1" class="form-label">Gender</label>
+    <select class="form-control" name='gender'>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <input type="submit" class="form-control btn btn-primary" value="Register" />
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="mb-3 w-25 my-5" style="margin: auto;">
+    <h4 class="text-center">Login</h4>
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email">
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="pwd" placeholder="Password">
+</div>
+<div class="mb-3 w-25" style="margin: auto;">
+    <input type="submit" class="form-control btn btn-primary" value="Login"/>
+    </form>
+</div> 
+
+
+{% endblock %}
